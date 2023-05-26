@@ -44,5 +44,10 @@ namespace Testing.Controllers
 
             return RedirectToAction("ViewProduct", new { id = product.ProductID });
         }
+        public IActionResult InsertProductToDatabase(Product productToInsert)
+        {
+            repo.InsertProduct(productToInsert);
+            return RedirectToAction("Index");
+        }
     }
 }

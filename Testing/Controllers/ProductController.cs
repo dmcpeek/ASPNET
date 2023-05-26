@@ -38,11 +38,10 @@ namespace Testing.Controllers
             return View(prod);
         }
 
-        public IActionResult UpdateProductToDatabase(Product product)
+        public IActionResult InsertProduct()
         {
-            repo.UpdateProduct(product);
-
-            return RedirectToAction("ViewProduct", new { id = product.ProductID });
+            var prod = repo.AssignCategory();
+            return View(prod);
         }
         public IActionResult InsertProductToDatabase(Product productToInsert)
         {
